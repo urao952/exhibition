@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+body{
+    margin: 0;
+}
+
+body .sitename{
+    font-size: 30px;
+}
+
+form ul li{
+    list-style: none;
+
+}
+
+/*headermainfooterの背景色*/
+
+.hmf-bc-r{
+    background-color: #f00;
+}
+
+.hmf-bc-g{
+    background-color: #0f0;
+}
+
+.hmf-bc-b{
+    background-color: #00f;
+}
+
+/*headermainfooterのマージン*/
+.hmf-pa-s{
+    padding: 10px 30px;
+}
+
+.hmf-pa-m{
+    padding: 25px 40px;
+}
+
+.hmf-pa-b{
+    padding: 40px 60px;
+}
+
+/*materialのマージン*/
+.margin-m-s{
+    margin: 14px;
+}
+
+.margin-m-m{
+    margin: 30px;
+}
+
+.margin-m-b{
+    margin: 40px;
+}
