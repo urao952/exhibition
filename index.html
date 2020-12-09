@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自動生成</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <style>
+        .generate {
+            display: none;
+        }
+
+        .form {
+            display: none;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        #generate {
+            color: aliceblue;
+        }
+
+        #header {
+            height: 150px;
+        }
+
+        #main {
+            height: 600px;
+        }
+
+        #footer {
+            height: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="generate" class="generate">
+        <div id="header" class="hmf-bc-r hmf-pa-s">
+            <h1 id="output_message">サイト名</h1>
+            <p class=""></p>
+            <p id="siteNameG">サイト名出力</p>
+        </div>
+        <div id="main" class="hmf-bc-r hmf-pa-s">メイン要素</div>
+        <div id="footer" class="hmf-bc-r hmf-pa-s">フッター要素</div>
+    </div>
+
+    <form action="" method="" id="form">
+        <ul>
+            <!-- requiredは一旦保留 -->
+            <li>
+                <label for="color">site color</label><br>
+                <select id="selectMenu" name="mainColor">
+                    <option value="red" selected>赤</option>
+                    <option value="green">緑</option>
+                    <option value="blue">青</option>
+                </select>
+            </li>
+            <li>
+                <label for="mysite">site name(20文字以内)</label><br>
+                <input id="mySite" type="text" maxlength="20" placeholder="サイト名を入力" name="siteName">
+            </li>
+            <li>
+                <label for="">name</label><br>
+                <input type="text" name="yourName" placeholder="あなたの名前を入力">
+            </li>
+            <li>
+                <label for="color">margin</label><br>
+                <select id="margin" name="margin">
+                    <option value="">小さめ</option>
+                    <option value="">中くらい</option>
+                    <option value="">多め</option>
+                </select>
+            </li>
+            <li>
+                <label for="">text-align</label><br>
+                <select id="textAlign" name="textAlign">
+                    <option value="">start</option>
+                    <option value="">right</option>
+                    <option value="">left</option>
+                    <option value="">center</option>
+                </select>
+            </li>
+            <li>
+                <input type="submit" value="生成！" onClick="send()">
+            </li>
+            <li>
+                <input type="reset" name="bt01" value="入力内容を初期化">
+            </li>
+        </ul>
+    </form>
+
+    <script language="javascript" type="text/javascript">
+        const _header = document.getElementById('header');
+        const _siteNameG = document.getElementsByClassName('siteName');
+        let _siteName = document.getElementById('mySite').value;
+        // const _siteColor = document.getElementById('color');
+        const _selectMenu = document.getElementById('selectMenu');
+        const _form = document.getElementById('form');
+        const _generate = document.getElementById('generate');
+
+        //色
+        _selectMenu.addEventListener("change", function () {
+            let _color1 = _selectMenu.value;
+            if (_color1 === 'red') {
+                _header.classList.remove('hmf-bc-g');
+                _header.classList.remove('hmf-bc-b');
+                _header.classList.add('hmf-bc-r');
+            } else if (_color1 === 'green') {
+                _header.classList.remove('hmf-bc-r');
+                _header.classList.remove('hmf-bc-b');
+                _header.classList.add('hmf-bc-g');
+            } else if (_color1 === 'blue') {
+                _header.classList.remove('hmf-bc-r');
+                _header.classList.remove('hmf-bc-g');
+                _header.classList.add('hmf-bc-b');
+            };
+        });
+
+        //サイト名
+        function func1() {
+            let _siteName = document.getElementById("siteName").value;
+            _siteName = "入力された内容は「" + input_message + "」です。";
+            document.getElementById("output_message").innerHTML = input_message;
+        }
+
+        //送信
+        function send() {
+            // document.mainColor.submit();
+            // document.siteName.submit();
+            // document.yourName.submit();
+            // document.margin.submit();
+            // document.textAlign.submit();
+            _form.classList.add('form');
+            _generate.classList.remove('generate');
+            _generate.classList.add('generate-b');
+        };
+
+        // function send() {
+
+        // };
+
+
+
+    </script>
+</body>
+
+</html>
